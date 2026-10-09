@@ -75,3 +75,20 @@
 /* Remove the dark overlay from the African woman portrait */
 .ticket-portrait-wrap:after{display:none!important}
 .portrait-label{background:linear-gradient(0deg,#0b2034d9,transparent);padding:30px 12px 12px;left:0;right:0;bottom:0}
+
+
+/* Replace the dark ticket panel with a light premium card */
+.ticket-card{background:linear-gradient(135deg,#fffdf8 0%,#f6f0e3 100%)!important;color:#102b40!important;box-shadow:0 24px 60px #102b401c!important;border:1px solid #dfc98d}
+.ticket-card:before{border-color:#c9a44c36!important;box-shadow:0 0 0 35px #c9a44c0a,0 0 0 75px #c9a44c08!important}
+.ticket-topline{border-bottom-color:#102b4020!important;color:#102b40!important}
+.ticket-status{color:#536777!important}
+.ticket-copy h1{color:#102b40!important}
+.ticket-copy h1 em{color:#b4872f!important}
+.ticket-copy p{color:#536777!important}
+.ticket-kicker{color:#9b7428!important}
+.ticket-bottom{border-top-color:#102b4020!important;color:#637582!important}
+.ticket-number{color:#9b7428!important}
+.ticket-number b{color:#9eacb5!important}
+.ticket-notch{background:#f8f8f5!important}
+.ticket-portrait-wrap{background:#eee7d8!important}
+.portrait-label{background:linear-gradient(0deg,#102b40b8,transparent)!important}
