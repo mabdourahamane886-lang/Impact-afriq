@@ -27,6 +27,41 @@
 @media(max-width:980px){.nav{height:80px}.nav-links{gap:13px}.nav-links .nav-cta{padding:11px 13px;font-size:.78rem}}
 @media(max-width:760px){.nav{height:72px}.brand-mark{width:43px;height:43px;border-radius:13px}.brand{font-size:1.08rem}.brand small{font-size:.52rem}.nav-links{top:72px;padding:17px 22px 22px}.nav-links .nav-cta{display:inline-flex;align-self:flex-start;margin-top:14px;padding:13px 17px;font-size:.86rem}.menu-toggle{margin-left:auto}}
 
+
+/* Mobile layout correction: keep hero text, image and floating cards separated */
+@media(max-width:760px){
+  .hero{padding:38px 0 48px}
+  .hero-grid{gap:30px}
+  .hero-copy p{font-size:1rem;margin:18px 0 22px}
+  .hero-actions{gap:10px}
+  .hero-actions .btn{width:100%;justify-content:center;padding:14px 16px}
+  .hero-note{align-items:flex-start;margin-top:22px;line-height:1.55}
+  .hero-visual{min-height:560px;margin:0 0 12px}
+  .hero-image{inset:0 8px 38px;border-radius:150px 150px 22px 22px}
+  .hero-image img{object-position:center}
+  .image-caption{left:25px;right:25px;bottom:118px}
+  .image-caption strong{font-size:1.18rem;line-height:1.3}
+  .image-caption span{display:block;margin-top:8px;line-height:1.45}
+  .floating-card{top:24px;right:0;max-width:158px;padding:14px 15px;border-radius:17px}
+  .floating-card b{font-size:1.45rem}
+  .floating-card small{font-size:.73rem;line-height:1.45;display:inline-block}
+  .floating-card.bottom{left:0;right:12px;bottom:0;top:auto;max-width:none;width:calc(100% - 12px);padding:15px 17px;gap:12px}
+  .floating-card.bottom .float-icon{width:42px;height:42px}
+  .floating-card.bottom strong{font-size:1rem}
+  .floating-card.bottom small{font-size:.78rem}
+  .trust-strip{padding:24px 0}
+  .trust-inner{display:grid;grid-template-columns:1fr 1fr;justify-items:center;gap:16px 10px}
+  .trust-label{grid-column:1/-1;width:auto;text-align:center}
+  .trust-word{font-size:.84rem;text-align:center}
+  .trust-word:last-child{grid-column:1/-1}
+}
+@media(max-width:380px){
+  .hero-visual{min-height:530px}
+  .floating-card{max-width:145px;padding:12px}
+  .image-caption{left:20px;right:20px;bottom:112px}
+  .image-caption strong{font-size:1.05rem}
+}
+
 </style>
 </head>
 <body>
