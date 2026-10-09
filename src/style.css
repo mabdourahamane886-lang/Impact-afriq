@@ -93,7 +93,9 @@
 .ticket-portrait-wrap{background:#eee7d8!important}
 .portrait-label{background:linear-gradient(0deg,#102b40b8,transparent)!important}
 
-/* Homepage: one standalone African woman photo, no ticket or overlay */
-.home-photo{width:100%;max-width:100%;margin:0 auto;padding:0;line-height:0;background:#fff;overflow:hidden}
-.home-photo img{display:block;width:100%;height:clamp(300px,58vw,680px);object-fit:cover;object-position:center 34%;border:0;border-radius:0;box-shadow:none}
-@media(min-width:900px){.home-photo img{height:min(72vh,760px);object-position:center 30%}}
+
+/* Ajustement de la photo d'accueil : proportions naturelles et cadrage harmonieux */
+.home-photo{width:100%;max-width:1180px;margin:0 auto;padding:clamp(14px,3vw,32px) clamp(14px,3vw,32px) 0;line-height:0;background:#fff;overflow:hidden;box-sizing:border-box}
+.home-photo img{display:block;width:100%;height:clamp(320px,62vw,660px);object-fit:cover;object-position:center 28%;border:0;border-radius:18px;box-shadow:0 18px 48px #102b401a}
+@media(min-width:900px){.home-photo img{height:min(72vh,720px);object-position:center 28%}}
+@media(max-width:599px){.home-photo{padding:12px 12px 0}.home-photo img{height:clamp(300px,105vw,470px);object-position:center 28%;border-radius:13px}}
