@@ -141,3 +141,24 @@
 .footer-logo{display:block;width:clamp(170px,24vw,230px);height:68px;max-width:100%;object-fit:contain;object-position:left center;opacity:1;filter:none;background:transparent}
 .footer-brand .footer-motto{display:block;max-width:300px;line-height:1.8}
 @media(max-width:599px){.footer-brand>a{padding:8px 12px;min-height:76px;border-radius:11px}.footer-logo{width:190px;height:58px}}
+
+/* Mobile-specific homepage photo tuning */
+@media(max-width:759px){
+  .home-hero{padding:34px 0 18px}
+  .home-hero-grid{gap:25px}
+  .home-hero-visual{width:100%;max-width:100%;padding:0 0 23px 10px;margin:0}
+  .home-hero-photo-frame{height:clamp(320px,112vw,490px);border-radius:140px 140px 14px 14px;box-shadow:0 16px 38px #102b401b}
+  .home-hero-photo-frame img{object-position:center 24%}
+  .home-hero-visual:before{left:0;bottom:0;width:43%;height:46%;border-radius:12px}
+  .home-hero-photo-tag{left:0;bottom:38px;gap:9px;padding:10px 12px;max-width:calc(100% - 8px)}
+  .home-hero-photo-tag b{font-size:.55rem;letter-spacing:.07em}
+  .home-hero-photo-tag small{font-size:.7rem}
+  .home-hero-index{right:0;font-size:.55rem;letter-spacing:.09em}
+}
+@media(max-width:380px){
+  .home-hero{padding-top:28px}
+  .home-hero-photo-frame{height:310px;border-radius:115px 115px 12px 12px}
+  .home-hero-photo-frame img{object-position:center 22%}
+  .home-hero-photo-tag{bottom:34px;padding:9px 10px}
+  .home-hero-photo-tag small{font-size:.65rem}
+}
