@@ -135,3 +135,9 @@
 .hero-bottom-line{height:1px;flex:1;background:#d9dfe0}
 @media(min-width:760px){.home-hero{padding-top:clamp(55px,7vw,95px)}.home-hero-grid{grid-template-columns:1.03fr .97fr;gap:clamp(30px,5vw,76px)}.home-hero-copy{padding:20px 0}.home-hero-visual{padding-left:22px}.home-hero-photo-frame{height:clamp(430px,48vw,620px)}.home-hero-copy h1{font-size:clamp(3.2rem,5.3vw,5.4rem)}.home-hero-bottom{margin-top:48px}}
 @media(max-width:759px){.home-hero-copy h1{max-width:650px}.home-hero-visual{max-width:520px}.home-hero-bottom{font-size:.52rem;letter-spacing:.1em;gap:8px}.home-hero-photo-tag{bottom:43px;padding:12px 14px}.home-hero-photo-tag b{font-size:.58rem}.home-hero-photo-tag small{font-size:.72rem}}
+
+/* Improve footer logo visibility against the dark footer */
+.footer-brand>a{display:inline-flex;align-items:center;justify-content:flex-start;background:#fff;border:1px solid #e4d4a9;border-radius:14px;padding:10px 16px;margin:0 0 16px;min-height:88px;max-width:100%;box-shadow:0 8px 24px #0002}
+.footer-logo{display:block;width:clamp(170px,24vw,230px);height:68px;max-width:100%;object-fit:contain;object-position:left center;opacity:1;filter:none;background:transparent}
+.footer-brand .footer-motto{display:block;max-width:300px;line-height:1.8}
+@media(max-width:599px){.footer-brand>a{padding:8px 12px;min-height:76px;border-radius:11px}.footer-logo{width:190px;height:58px}}
