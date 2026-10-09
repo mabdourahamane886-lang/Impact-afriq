@@ -71,3 +71,7 @@
 .portrait-label b{font:800 1rem Manrope}
 @media(min-width:650px){.ticket-main{grid-template-columns:1.1fr .8fr;gap:28px}.ticket-portrait-wrap{height:310px;min-height:310px}.ticket-portrait{object-position:center 30%}}
 @media(min-width:900px){.ticket-main{grid-template-columns:1.05fr .75fr}.ticket-portrait-wrap{height:340px;min-height:340px}.ticket-card{padding:27px 34px 22px}}
+
+/* Remove the dark overlay from the African woman portrait */
+.ticket-portrait-wrap:after{display:none!important}
+.portrait-label{background:linear-gradient(0deg,#0b2034d9,transparent);padding:30px 12px 12px;left:0;right:0;bottom:0}
