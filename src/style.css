@@ -29,3 +29,10 @@ h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.13;letter-spacing:-.04e
   .floating-card{width:205px;bottom:0}
   .floating-card.bottom{bottom:150px}
 }
+
+/* Logo: visually blend away the white canvas and align to the far left */
+.brand{margin-left:-8px;justify-content:flex-start}
+.brand-logo{display:block;object-position:left center;object-fit:contain;mix-blend-mode:multiply;background:transparent}
+.footer-logo{filter:none;mix-blend-mode:screen;object-position:left center;max-width:100%}
+@media(max-width:599px){.brand{margin-left:-7px}.brand-logo{width:164px;max-height:58px}}
+@media(min-width:900px){.brand{margin-left:-10px}.brand-logo{width:205px}}
