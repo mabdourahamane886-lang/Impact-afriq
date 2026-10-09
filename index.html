@@ -62,6 +62,18 @@
   .image-caption strong{font-size:1.05rem}
 }
 
+
+/* Place the Impact card below the Agir avec sens card on mobile */
+@media(max-width:760px){
+  .hero-visual{min-height:650px}
+  .floating-card{top:auto;right:0;bottom:190px;max-width:calc(100% - 34px);width:230px}
+  .floating-card.bottom{left:0;right:12px;bottom:0;top:auto;max-width:none;width:calc(100% - 12px)}
+}
+@media(max-width:380px){
+  .hero-visual{min-height:640px}
+  .floating-card{bottom:188px;width:210px;max-width:calc(100% - 28px)}
+}
+
 </style>
 </head>
 <body>
