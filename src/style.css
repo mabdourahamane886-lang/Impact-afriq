@@ -92,3 +92,8 @@
 .ticket-notch{background:#f8f8f5!important}
 .ticket-portrait-wrap{background:#eee7d8!important}
 .portrait-label{background:linear-gradient(0deg,#102b40b8,transparent)!important}
+
+/* Homepage: one standalone African woman photo, no ticket or overlay */
+.home-photo{width:100%;max-width:100%;margin:0 auto;padding:0;line-height:0;background:#fff;overflow:hidden}
+.home-photo img{display:block;width:100%;height:clamp(300px,58vw,680px);object-fit:cover;object-position:center 34%;border:0;border-radius:0;box-shadow:none}
+@media(min-width:900px){.home-photo img{height:min(72vh,760px);object-position:center 30%}}
