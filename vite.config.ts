@@ -14,6 +14,7 @@ export default defineConfig({
         expertises: resolve(__dirname, 'expertises/index.html'),
         projets: resolve(__dirname, 'projets/index.html'),
         evenements: resolve(__dirname, 'evenements/index.html'),
+        nicatfest: resolve(__dirname, 'evenements/nicatfest-2026/index.html'),
         actualites: resolve(__dirname, 'actualites/index.html'),
         partenariats: resolve(__dirname, 'partenariats/index.html'),
         ressources: resolve(__dirname, 'ressources/index.html'),
