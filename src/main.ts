@@ -103,3 +103,52 @@ form?.addEventListener('submit', (event) => {
 
 const currentYear = document.querySelector('#year');
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+
+
+// Fonctionnalités interactives des pages Événements, Partenariats, Actualités et Ressources.
+function prepareMessage(formId: string, statusId: string, subject: string) {
+  const form = document.querySelector<HTMLFormElement>('#' + formId);
+  const status = document.querySelector<HTMLElement>('#' + statusId);
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const entries = Array.from(new FormData(form).entries())
+      .map(([key, value]) => key + ' : ' + String(value).trim())
+      .join('\n');
+    const body = 'Bonjour Impact Afriq,\n\nObjet : ' + subject + '\n\n' + entries;
+    if (CONTACT_EMAIL) {
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      if (status) status.textContent = 'Votre application e-mail s’ouvre avec le message préparé.';
+    } else {
+      window.open(whatsappUrl(body), '_blank', 'noopener,noreferrer');
+      if (status) status.textContent = 'Message préparé. WhatsApp s’ouvre : choisissez le destinataire officiel. Pour une réception directe, le contact professionnel doit être configuré.';
+    }
+  });
+}
+prepareMessage('eventProposalForm', 'eventStatus', 'Proposition d’événement — Impact Afriq');
+prepareMessage('partnerForm', 'partnerStatus', 'Proposition de partenariat — Impact Afriq');
+
+document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter || 'all';
+    document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((item) => item.classList.toggle('active', item === button));
+    document.querySelectorAll<HTMLElement>('[data-category]').forEach((card) => {
+      card.hidden = filter !== 'all' && card.dataset.category !== filter;
+    });
+  });
+});
+
+const checklist = Array.from(document.querySelectorAll<HTMLInputElement>('.resource-check'));
+function updateChecklist() {
+  const done = checklist.filter((input) => input.checked).length;
+  const label = document.querySelector<HTMLElement>('#checkProgress');
+  const bar = document.querySelector<HTMLElement>('#progressBar');
+  if (label) label.textContent = done + ' / ' + checklist.length + ' éléments';
+  if (bar) bar.style.width = (checklist.length ? (done / checklist.length) * 100 : 0) + '%';
+}
+checklist.forEach((input) => input.addEventListener('change', updateChecklist));
+document.querySelector('#printChecklist')?.addEventListener('click', () => window.print());
+document.querySelector('#resetChecklist')?.addEventListener('click', () => {
+  checklist.forEach((input) => { input.checked = false; });
+  updateChecklist();
+});
