@@ -1,7 +1,6 @@
 import './style.css';
 
 const WHATSAPP_NUMBER = ''; // À renseigner au format international, sans + ni espaces.
-const CONTACT_EMAIL = ''; // Adresse professionnelle à renseigner.
 
 const whatsappText = (message: string) =>
   encodeURIComponent(message || 'Bonjour Impact Afriq, je souhaite en savoir plus sur vos services.');
