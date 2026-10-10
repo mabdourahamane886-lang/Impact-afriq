@@ -24,7 +24,13 @@ module.exports = async function handler(req, res) {
     .filter(([key]) => /^[\p{L}\p{N} _-]{1,80}$/u.test(key))
     .map(([key, value]) => [key, String(value || '').trim().slice(0, MAX_FIELD_LENGTH)]);
 
-  if (!entries.length || entries.some(([, value]) => !value)) {
+  const requiredByForm = {
+    'Contact du site Impact Afriq': ['name', 'email', 'subject', 'message'],
+    'Proposition d’événement — Impact Afriq': ['Nom de l’activité', 'Présentation'],
+    'Proposition de partenariat — Impact Afriq': ['Nom complet', 'Organisation', 'E-mail', 'Proposition']
+  };
+  const requiredFields = requiredByForm[subject] || [];
+  if (!entries.length || requiredFields.some((required) => !fields[required] || !String(fields[required]).trim())) {
     return res.status(400).json({ error: 'Veuillez remplir tous les champs obligatoires.' });
   }
 
