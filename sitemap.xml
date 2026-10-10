@@ -11,4 +11,5 @@
   <url><loc>https://impact-afriq.vercel.app/impact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://impact-afriq.vercel.app/temoignages/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://impact-afriq.vercel.app/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://impact-afriq.vercel.app/evenements/nicatfest-2026/</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>
