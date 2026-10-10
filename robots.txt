@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://impact-afriq.vercel.app/sitemap.xml
