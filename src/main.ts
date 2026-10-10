@@ -60,45 +60,34 @@ if ('IntersectionObserver' in window && !reduceMotion) {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
 
+async function submitFormToApi(form: HTMLFormElement, status: HTMLElement | null, subject: string) {
+  if (!form.reportValidity()) return;
+  const fields = Object.fromEntries(Array.from(new FormData(form).entries()).map(([key, value]) => [key, String(value).trim()]));
+  if (status) status.textContent = 'Envoi en cours…';
+  const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+  if (submitButton) submitButton.disabled = true;
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ subject, fields }),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Le service de contact est temporairement indisponible.');
+    form.reset();
+    if (status) status.textContent = 'Merci. Votre demande a été envoyée à Impact Afriq.';
+  } catch (error) {
+    if (status) status.textContent = error instanceof Error ? error.message : 'Envoi impossible. Réessayez plus tard.';
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
+}
+
 const form = document.querySelector<HTMLFormElement>('#contactForm');
 const status = document.querySelector<HTMLElement>('#formStatus');
-
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (!form.reportValidity()) return;
-
-  const values = new FormData(form);
-  const name = String(values.get('name') ?? '').trim();
-  const email = String(values.get('email') ?? '').trim();
-  const organization = String(values.get('organization') ?? '').trim();
-  const subject = String(values.get('subject') ?? '').trim();
-  const message = String(values.get('message') ?? '').trim();
-
-  const body = [
-    'Bonjour Impact Afriq,',
-    '',
-    'Nom : ' + name,
-    'E-mail : ' + email,
-    'Organisation : ' + (organization || 'Non précisée'),
-    'Sujet : ' + subject,
-    '',
-    'Message :',
-    message,
-  ].join('\n');
-
-  if (WHATSAPP_NUMBER) {
-    const url = whatsappUrl(body);
-    window.open(url, '_blank', 'noopener,noreferrer');
-    if (status) status.textContent = 'Votre message est prêt dans WhatsApp. Vérifiez-le puis appuyez sur Envoyer.';
-  } else if (CONTACT_EMAIL) {
-    const url = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Contact Impact Afriq — ' + subject) + '&body=' + encodeURIComponent(body);
-    window.location.href = url;
-    if (status) status.textContent = 'Votre application e-mail va s’ouvrir pour vous permettre d’envoyer le message.';
-  } else {
-    const url = whatsappUrl(body);
-    window.open(url, '_blank', 'noopener,noreferrer');
-    if (status) status.textContent = 'WhatsApp s’ouvre avec votre message. Pour diriger les demandes directement vers Impact Afriq, le numéro WhatsApp professionnel doit encore être configuré.';
-  }
+  void submitFormToApi(form, status, 'Contact du site Impact Afriq');
 });
 
 const currentYear = document.querySelector('#year');
@@ -111,18 +100,7 @@ function prepareMessage(formId: string, statusId: string, subject: string) {
   const status = document.querySelector<HTMLElement>('#' + statusId);
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
-    const entries = Array.from(new FormData(form).entries())
-      .map(([key, value]) => key + ' : ' + String(value).trim())
-      .join('\n');
-    const body = 'Bonjour Impact Afriq,\n\nObjet : ' + subject + '\n\n' + entries;
-    if (CONTACT_EMAIL) {
-      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      if (status) status.textContent = 'Votre application e-mail s’ouvre avec le message préparé.';
-    } else {
-      window.open(whatsappUrl(body), '_blank', 'noopener,noreferrer');
-      if (status) status.textContent = 'Message préparé. WhatsApp s’ouvre : choisissez le destinataire officiel. Pour une réception directe, le contact professionnel doit être configuré.';
-    }
+    void submitFormToApi(form, status, subject);
   });
 }
 prepareMessage('eventProposalForm', 'eventStatus', 'Proposition d’événement — Impact Afriq');
