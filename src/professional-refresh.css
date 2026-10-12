@@ -185,3 +185,23 @@ a{transition:color .2s ease}
 /* Training card: frame the portrait around the speaker's face and upper body. */
 .expertise-photo-training{object-position:center 27%}
 @media(max-width:759px){.expertise-photo-training{object-position:center 24%}}
+
+
+/* Project portfolio cards: completed and upcoming initiatives */
+.project-showcase-grid{display:grid;grid-template-columns:1fr;gap:26px}
+.project-showcase-card{overflow:hidden;border:1px solid #e0e7e7;border-radius:24px;background:#fff;box-shadow:0 12px 34px rgba(8,34,56,.055);transition:transform .25s,box-shadow .25s}
+.project-showcase-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(8,34,56,.1)}
+.project-showcase-image{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#f2f2ef;aspect-ratio:4/3}
+.project-showcase-image img{width:100%;height:100%;object-fit:cover;display:block}
+.project-logo-image{background:#fff;aspect-ratio:4/2.5;padding:18px}
+.project-logo-image img{object-fit:contain}
+.project-status{position:absolute;top:16px;left:16px;padding:8px 13px;border-radius:999px;background:#0b2b40;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 5px 16px #06172522}
+.project-completed .project-status{background:#1c6949}
+.project-upcoming .project-status{background:#a67b23}
+.project-showcase-copy{padding:clamp(24px,3vw,34px)}
+.project-showcase-copy h2{margin:12px 0;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.2}
+.project-showcase-copy p{color:#637481;line-height:1.75}
+.project-date{margin-top:18px}
+.project-state-note{display:inline-block;margin-top:6px;color:#1c6949;font-size:.85rem;font-weight:700}
+.project-showcase-copy .text-link{display:inline-flex;margin-top:10px}
+@media(min-width:800px){.project-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}.project-showcase-card{display:flex;flex-direction:column}.project-showcase-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start}.project-showcase-copy .text-link,.project-state-note{margin-top:auto;padding-top:18px}.project-showcase-image{aspect-ratio:4/3}.project-logo-image{aspect-ratio:4/3}}
