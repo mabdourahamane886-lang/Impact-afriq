@@ -180,3 +180,8 @@ a{transition:color .2s ease}
 .expertise-photo-copy p{color:var(--muted)}
 .expertise-photo-card .text-link{display:inline-flex;margin-top:10px}
 @media(min-width:760px){.expertise-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}.expertise-photo{height:245px}.expertise-photo-copy{padding:24px}.expertise-photo-card{display:flex;flex-direction:column}.expertise-photo-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start}.expertise-photo-copy .text-link{margin-top:auto;padding-top:20px}}
+
+
+/* Training card: frame the portrait around the speaker's face and upper body. */
+.expertise-photo-training{object-position:center 27%}
+@media(max-width:759px){.expertise-photo-training{object-position:center 24%}}
