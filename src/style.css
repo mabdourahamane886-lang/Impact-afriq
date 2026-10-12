@@ -821,3 +821,45 @@ body.home-page .hero .btn-primary:hover{
   border-color:#143b55!important;
   color:#fff!important;
 }
+
+
+/* INNER PAGES: white primary buttons with charcoal text; white secondary buttons with charcoal outline */
+body:not(.page-home):not(.home-page) .btn-primary,
+body:not(.page-home):not(.home-page) a.btn-primary,
+body:not(.page-home):not(.home-page) button.btn-primary,
+body:not(.page-home):not(.home-page) input[type="submit"],
+body:not(.page-home):not(.home-page) .nav-links .nav-cta{
+  background:#ffffff!important;
+  background-image:none!important;
+  color:#25272b!important;
+  border:1px solid #e0e3e6!important;
+  box-shadow:6px 6px 16px rgba(20,30,45,.08),-5px -5px 14px rgba(255,255,255,.92)!important;
+}
+body:not(.page-home):not(.home-page) .btn-primary:hover,
+body:not(.page-home):not(.home-page) a.btn-primary:hover,
+body:not(.page-home):not(.home-page) button.btn-primary:hover,
+body:not(.page-home):not(.home-page) input[type="submit"]:hover,
+body:not(.page-home):not(.home-page) .nav-links .nav-cta:hover{
+  background:#f4f5f7!important;
+  background-image:none!important;
+  color:#25272b!important;
+  border-color:#25272b!important;
+}
+/* Secondary buttons on inner pages: white surface, dark outline and text */
+body:not(.page-home):not(.home-page) .btn-outline-dark,
+body:not(.page-home):not(.home-page) .btn-secondary,
+body:not(.page-home):not(.home-page) .btn-outline,
+body:not(.page-home):not(.home-page) button.btn-outline-dark{
+  background:#ffffff!important;
+  color:#25272b!important;
+  border:1px solid #25272b!important;
+  box-shadow:0 4px 12px rgba(20,30,45,.05)!important;
+}
+body:not(.page-home):not(.home-page) .btn-outline-dark:hover,
+body:not(.page-home):not(.home-page) .btn-secondary:hover,
+body:not(.page-home):not(.home-page) .btn-outline:hover,
+body:not(.page-home):not(.home-page) button.btn-outline-dark:hover{
+  background:#f4f5f7!important;
+  color:#25272b!important;
+  border-color:#25272b!important;
+}
