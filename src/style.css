@@ -701,3 +701,35 @@ button.btn-outline-dark:hover{
   outline: 3px solid rgba(37,39,43,.28);
   outline-offset: 3px;
 }
+
+
+/* GLOBAL OVERRIDE: no gold/yellow backgrounds on any buttons site-wide */
+a.btn-primary,
+button.btn-primary,
+input[type="submit"],
+input[type="button"].btn-primary,
+.btn-primary,
+.nav-links .nav-cta,
+.projects-cta-panel .btn-primary,
+.projects-hero-actions .btn-primary,
+.projects-share-actions .btn-primary {
+  background: #25272b !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: #25272b !important;
+  box-shadow: 7px 7px 18px rgba(19,25,34,.12), inset 1px 1px 2px rgba(255,255,255,.10) !important;
+}
+a.btn-primary:hover,
+button.btn-primary:hover,
+input[type="submit"]:hover,
+input[type="button"].btn-primary:hover,
+.btn-primary:hover,
+.nav-links .nav-cta:hover,
+.projects-cta-panel .btn-primary:hover,
+.projects-hero-actions .btn-primary:hover,
+.projects-share-actions .btn-primary:hover {
+  background: #111827 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: #111827 !important;
+}
