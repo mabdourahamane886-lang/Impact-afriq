@@ -774,3 +774,50 @@ button.btn-outline-dark:hover {
   color: #ffffff !important;
   border-color: #0b2034 !important;
 }
+
+
+/* Final CTA rule requested: homepage primary button navy; all inner-page primary buttons black with white text */
+body:not(.page-home):not(.home-page) .btn-primary,
+body:not(.page-home):not(.home-page) a.btn-primary,
+body:not(.page-home):not(.home-page) button.btn-primary,
+body:not(.page-home):not(.home-page) input[type="submit"],
+body:not(.page-home):not(.home-page) .nav-links .nav-cta{
+  background:#25272b!important;
+  background-image:none!important;
+  color:#fff!important;
+  border-color:#25272b!important;
+  box-shadow:7px 7px 18px rgba(19,25,34,.12),inset 1px 1px 2px rgba(255,255,255,.10)!important;
+}
+body:not(.page-home):not(.home-page) .btn-primary:hover,
+body:not(.page-home):not(.home-page) a.btn-primary:hover,
+body:not(.page-home):not(.home-page) button.btn-primary:hover,
+body:not(.page-home):not(.home-page) input[type="submit"]:hover,
+body:not(.page-home):not(.home-page) .nav-links .nav-cta:hover{
+  background:#111827!important;
+  background-image:none!important;
+  color:#fff!important;
+  border-color:#111827!important;
+}
+/* Homepage main CTA: solid navy, white text, no gold */
+body.page-home .btn-primary,
+body.home-page .btn-primary,
+body.page-home a.btn-primary,
+body.home-page a.btn-primary,
+body.page-home .hero .btn-primary,
+body.home-page .hero .btn-primary,
+body.page-home .hero a.btn-primary,
+body.home-page .hero a.btn-primary{
+  background:#0b2034!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid #0b2034!important;
+  box-shadow:0 8px 22px rgba(11,32,52,.17)!important;
+}
+body.page-home .btn-primary:hover,
+body.home-page .btn-primary:hover,
+body.page-home .hero .btn-primary:hover,
+body.home-page .hero .btn-primary:hover{
+  background:#143b55!important;
+  border-color:#143b55!important;
+  color:#fff!important;
+}
