@@ -733,3 +733,44 @@ input[type="button"].btn-primary:hover,
   color: #ffffff !important;
   border-color: #111827 !important;
 }
+
+
+/* SITE-WIDE BUTTON PALETTE: white and navy only; no gold/yellow button fills */
+.btn-primary,
+a.btn-primary,
+button.btn-primary,
+input[type="submit"],
+.nav-links .nav-cta {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #0b2034 !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: 0 7px 20px rgba(8, 28, 48, 0.12), inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+.btn-primary:hover,
+a.btn-primary:hover,
+button.btn-primary:hover,
+input[type="submit"]:hover,
+.nav-links .nav-cta:hover {
+  background-color: #e9eef2 !important;
+  background-image: none !important;
+  color: #0b2034 !important;
+  border-color: #e9eef2 !important;
+}
+.btn-outline-dark,
+.btn-secondary,
+.btn-outline,
+button.btn-outline-dark {
+  background: transparent !important;
+  color: #0b2034 !important;
+  border: 1px solid #0b2034 !important;
+  box-shadow: 0 5px 15px rgba(8, 28, 48, 0.07) !important;
+}
+.btn-outline-dark:hover,
+.btn-secondary:hover,
+.btn-outline:hover,
+button.btn-outline-dark:hover {
+  background: #0b2034 !important;
+  color: #ffffff !important;
+  border-color: #0b2034 !important;
+}
