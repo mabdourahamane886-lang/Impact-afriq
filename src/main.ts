@@ -1,4 +1,5 @@
 import './style.css';
+import './professional-refresh.css';
 
 const WHATSAPP_NUMBER = ''; // À renseigner au format international, sans + ni espaces.
 
