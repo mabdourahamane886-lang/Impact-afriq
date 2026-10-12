@@ -420,3 +420,161 @@ footer,.footer{background:#0b2034;color:#fff}
 /* Lighten major content surfaces while retaining branded navy hero/footer sections. */
 .intro,.services,.approach,.projects,.section-soft,.contact-section,.resources-section,.news-section,.events-section{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* SITE-WIDE PREMIUM BUTTON SYSTEM — consistent on every Impact Afriq page */
+:root{
+  --button-radius:12px;
+  --button-height:50px;
+  --button-ease:cubic-bezier(.2,.7,.2,1);
+}
+.btn,
+button:not(.menu-toggle):not(.filter-chip):not(.unstyled-button),
+input[type="submit"],
+input[type="button"]{
+  min-height:var(--button-height);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:13px 20px;
+  border:1px solid transparent;
+  border-radius:var(--button-radius);
+  font:700 .9rem/1.2 'DM Sans',sans-serif;
+  letter-spacing:.005em;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+  user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .2s var(--button-ease),color .2s var(--button-ease),border-color .2s var(--button-ease),box-shadow .2s var(--button-ease),transform .2s var(--button-ease);
+}
+.btn-primary,
+button.btn-primary,
+input[type="submit"]{
+  color:#10283a!important;
+  background:linear-gradient(135deg,#f0d486 0%,#d9ae50 100%);
+  border-color:#d9ae50;
+  box-shadow:0 5px 14px rgba(142,102,25,.14),inset 0 1px 0 rgba(255,255,255,.48);
+}
+.btn-primary:hover,
+button.btn-primary:hover,
+input[type="submit"]:hover{
+  color:#fff!important;
+  background:#0b2034;
+  border-color:#0b2034;
+  box-shadow:0 9px 22px rgba(11,32,52,.18);
+  transform:translateY(-2px);
+}
+.btn-outline-dark,
+.btn-secondary,
+.btn-outline,
+button.btn-outline-dark{
+  color:#0b2034!important;
+  background:#fff;
+  border-color:#d6dfe5;
+  box-shadow:0 2px 5px rgba(11,32,52,.025);
+}
+.btn-outline-dark:hover,
+.btn-secondary:hover,
+.btn-outline:hover,
+button.btn-outline-dark:hover{
+  color:#0b2034!important;
+  background:#f4f7f8;
+  border-color:#9aabb7;
+  box-shadow:0 5px 13px rgba(11,32,52,.07);
+  transform:translateY(-1px);
+}
+.btn-ghost{
+  color:#fff!important;
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.42);
+}
+.btn-ghost:hover{
+  color:#0b2034!important;
+  background:#fff;
+  border-color:#fff;
+  transform:translateY(-1px);
+}
+.btn:active,
+button:not(.menu-toggle):not(.filter-chip):active,
+input[type="submit"]:active{
+  transform:translateY(0) scale(.985);
+  box-shadow:none;
+}
+.btn:focus-visible,
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible{
+  outline:3px solid rgba(217,174,80,.55);
+  outline-offset:3px;
+}
+.btn:disabled,
+button:disabled,
+input[type="submit"]:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+.nav-links .nav-cta{
+  min-height:44px;
+  padding:11px 16px;
+  border-radius:10px;
+  white-space:nowrap;
+}
+.menu-toggle{
+  min-height:46px;
+  min-width:46px;
+  padding:0;
+  border:1px solid #e0e6e9;
+  background:#fff;
+  box-shadow:0 2px 8px rgba(11,32,52,.035);
+  transition:border-color .2s,background-color .2s,box-shadow .2s;
+}
+.menu-toggle:hover{
+  background:#f8fafb;
+  border-color:#c7d2d9;
+  box-shadow:0 4px 12px rgba(11,32,52,.07);
+}
+.filter-chip{
+  min-height:44px;
+  padding:11px 17px;
+  border-radius:10px;
+  border:1px solid #dce4e8;
+  background:#fff;
+  color:#31495b;
+  font:700 .84rem/1.2 'DM Sans',sans-serif;
+  transition:background-color .2s,color .2s,border-color .2s,box-shadow .2s,transform .2s;
+}
+.filter-chip:hover{
+  border-color:#9baeb9;
+  background:#f7f9fa;
+  transform:translateY(-1px);
+}
+.filter-chip.active{
+  background:#0b2034;
+  border-color:#0b2034;
+  color:#fff;
+  box-shadow:0 4px 12px rgba(11,32,52,.13);
+}
+.text-link{
+  min-height:40px;
+  align-items:center;
+  border-radius:7px;
+  text-underline-offset:4px;
+}
+.text-link:focus-visible{outline:2px solid #d9ae50;outline-offset:4px}
+.submit-btn{width:100%;min-height:54px;border-radius:12px}
+.projects-share-actions .btn{min-height:50px}
+@media(max-width:600px){
+  .btn,button:not(.menu-toggle):not(.filter-chip):not(.unstyled-button),input[type="submit"],input[type="button"]{
+    min-height:48px;
+    padding:12px 16px;
+    font-size:.87rem;
+  }
+  .nav-links .nav-cta{width:100%;min-height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn,button,input[type="submit"],input[type="button"],.filter-chip{transition:none}
+}
