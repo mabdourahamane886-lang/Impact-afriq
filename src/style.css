@@ -863,3 +863,35 @@ body:not(.page-home):not(.home-page) button.btn-outline-dark:hover{
   color:#25272b!important;
   border-color:#25272b!important;
 }
+
+
+/* HOMEPAGE: simple black button with white text, no gold */
+body.page-home .btn-primary,
+body.home-page .btn-primary,
+body.page-home a.btn-primary,
+body.home-page a.btn-primary,
+body.page-home .hero .btn-primary,
+body.home-page .hero .btn-primary,
+body.page-home .hero a.btn-primary,
+body.home-page .hero a.btn-primary,
+body.page-home .home-hero .btn-primary,
+body.home-page .home-hero .btn-primary,
+body.page-home .home-hero a.btn-primary,
+body.home-page .home-hero a.btn-primary {
+  background:#25272b!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid #25272b!important;
+  box-shadow:7px 7px 18px rgba(19,25,34,.12),inset 1px 1px 2px rgba(255,255,255,.10)!important;
+}
+body.page-home .btn-primary:hover,
+body.home-page .btn-primary:hover,
+body.page-home .hero .btn-primary:hover,
+body.home-page .hero .btn-primary:hover,
+body.page-home .home-hero .btn-primary:hover,
+body.home-page .home-hero .btn-primary:hover {
+  background:#111827!important;
+  background-image:none!important;
+  border-color:#111827!important;
+  color:#fff!important;
+}
