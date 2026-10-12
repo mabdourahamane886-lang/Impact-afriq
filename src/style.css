@@ -377,3 +377,12 @@
  .project-card-bottom{align-items:flex-start}
  .projects-share-actions>*{width:100%;justify-content:center}
 }
+
+
+/* High-contrast project status badges: white text on green / deep amber */
+.project-showcase-card .project-status{color:#fff!important;border:1px solid rgba(255,255,255,.28);font-size:.72rem;font-weight:850;letter-spacing:.045em;text-shadow:0 1px 2px rgba(0,0,0,.12)}
+.project-completed .project-status{background:#17834f!important;box-shadow:0 5px 18px rgba(13,86,51,.28)}
+.project-completed .project-status .status-dot{background:#fff}
+.project-upcoming .project-status{background:#a96600!important;box-shadow:0 5px 18px rgba(111,65,0,.3)}
+.project-upcoming .project-status .status-dot{background:#fff}
+@media(prefers-contrast:more){.project-showcase-card .project-status{border:2px solid #fff}}
