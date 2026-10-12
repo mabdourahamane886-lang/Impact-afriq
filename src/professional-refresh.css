@@ -169,3 +169,14 @@ a{transition:color .2s ease}
 @media(prefers-reduced-motion:reduce){
   .home-hero-photo-frame img,.project-image img,.onepage-card img,.editorial-card>img,.event-feature img{transition:none}
 }
+
+
+/* Expertise cards with owner-supplied photography */
+.expertise-photo-grid{display:grid;grid-template-columns:1fr;gap:24px}
+.expertise-photo-card{padding:0!important;overflow:hidden;border-radius:22px;background:#fff}
+.expertise-photo{display:block;width:100%;height:clamp(220px,25vw,310px);object-fit:cover;object-position:center}
+.expertise-photo-copy{padding:clamp(22px,3vw,32px)}
+.expertise-photo-copy h2{font-size:clamp(1.35rem,2vw,1.8rem);line-height:1.2;margin:14px 0}
+.expertise-photo-copy p{color:var(--muted)}
+.expertise-photo-card .text-link{display:inline-flex;margin-top:10px}
+@media(min-width:760px){.expertise-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}.expertise-photo{height:245px}.expertise-photo-copy{padding:24px}.expertise-photo-card{display:flex;flex-direction:column}.expertise-photo-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start}.expertise-photo-copy .text-link{margin-top:auto;padding-top:20px}}
