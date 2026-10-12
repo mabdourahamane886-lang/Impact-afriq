@@ -386,3 +386,37 @@
 .project-upcoming .project-status{background:#a96600!important;box-shadow:0 5px 18px rgba(111,65,0,.3)}
 .project-upcoming .project-status .status-dot{background:#fff}
 @media(prefers-contrast:more){.project-showcase-card .project-status{border:2px solid #fff}}
+
+
+/* IMPACT AFRIQ — global bright-white interface, preserving navy & gold brand identity */
+:root{
+  --navy:#0b2034;
+  --navy2:#143b55;
+  --gold:#d9ae50;
+  --gold-light:#f7efd9;
+  --ink:#172a3a;
+  --muted:#687986;
+  --line:#e8ecef;
+  --paper:#fbfcfb;
+  --shadow:0 16px 42px rgba(11,32,52,.055);
+}
+html,body{background:#fff;color:var(--ink)}
+body{line-height:1.7}
+.header{background:rgba(255,255,255,.97);border-bottom:1px solid #edf0f2;box-shadow:0 3px 18px rgba(11,32,52,.035)}
+.nav-links{background:#fff;border-color:#e8ecef}
+.nav-links>a:not(.btn){color:#20394b}
+.section,.intro,.projects,.section-soft{background:#fff}
+.services,.approach{background:#fbfcfb}
+.service-card,.project-card,.project-showcase-card,.editorial-card,.event-feature{background:#fff;border-color:#e8ecef;box-shadow:0 8px 28px rgba(11,32,52,.045)}
+.service-card:hover,.project-showcase-card:hover{box-shadow:0 18px 40px rgba(11,32,52,.085)}
+.section-soft{background:#f8faf9}
+h1,h2,h3,h4{color:var(--navy)}
+p{color:#687986}
+.eyebrow{color:#9b762a}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(183,137,40,.15)}
+.btn-outline-dark{background:#fff;color:var(--navy);border-color:#dce3e7}
+input,select,textarea{background:#fff;color:var(--ink);border-color:#dfe5e8}
+footer,.footer{background:#0b2034;color:#fff}
+/* Lighten major content surfaces while retaining branded navy hero/footer sections. */
+.intro,.services,.approach,.projects,.section-soft,.contact-section,.resources-section,.news-section,.events-section{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
