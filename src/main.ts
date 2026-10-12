@@ -130,3 +130,67 @@ document.querySelector('#resetChecklist')?.addEventListener('click', () => {
   checklist.forEach((input) => { input.checked = false; });
   updateChecklist();
 });
+
+
+/* Shareable permalink on each content card across the site */
+(() => {
+  const cardSelector = [
+    'article.project-showcase-card',
+    'article.project-card',
+    'article.onepage-card',
+    'article.editorial-card',
+    'article.service-card',
+    'article.partner-card',
+    'article.testimonial-card',
+    'article.resource-card',
+    'article.news-card',
+    'article.event-card',
+    'article.expertise-card',
+    '.project-showcase-card',
+    '.event-card',
+    '.resource-card',
+    '.editorial-card',
+    '.testimonial-card'
+  ].join(',');
+  const slugify = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
+  const cards = Array.from(document.querySelectorAll<HTMLElement>(cardSelector));
+  const used = new Set<string>();
+  cards.forEach((card, index) => {
+    if (card.querySelector('.card-share-tools')) return;
+    const heading = card.querySelector<HTMLElement>('h1,h2,h3,h4,[data-card-title]');
+    const title = heading?.textContent?.trim() || card.querySelector('img')?.getAttribute('alt')?.trim() || 'Contenu Impact Afriq';
+    let id = card.id || slugify(title) || 'contenu';
+    const base = id;
+    let suffix = 2;
+    while (used.has(id) || (document.getElementById(id) && document.getElementById(id) !== card)) id = base + '-' + suffix++;
+    used.add(id);
+    card.id = id;
+    const shareUrl = new URL(window.location.pathname + '#' + id, window.location.origin).toString();
+    const tools = document.createElement('div');
+    tools.className = 'card-share-tools';
+    tools.innerHTML = '<span class="card-share-label">Partager cette carte</span><button type="button" class="card-share-copy">Copier le lien</button><button type="button" class="card-share-native">Partager ↗</button><span class="card-share-status" aria-live="polite"></span>';
+    const copyButton = tools.querySelector<HTMLButtonElement>('.card-share-copy')!;
+    const shareButton = tools.querySelector<HTMLButtonElement>('.card-share-native')!;
+    const status = tools.querySelector<HTMLElement>('.card-share-status')!;
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        status.textContent = 'Lien copié !';
+      } catch {
+        status.textContent = shareUrl;
+      }
+    });
+    shareButton.addEventListener('click', async () => {
+      try {
+        if (navigator.share) await navigator.share({ title, text: title, url: shareUrl });
+        else {
+          await navigator.clipboard.writeText(shareUrl);
+          status.textContent = 'Lien copié !';
+        }
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === 'AbortError')) status.textContent = shareUrl;
+      }
+    });
+    card.appendChild(tools);
+  });
+})();
