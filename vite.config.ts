@@ -15,6 +15,8 @@ export default defineConfig({
         projets: resolve(__dirname, 'projets/index.html'),
         evenements: resolve(__dirname, 'evenements/index.html'),
         nicatfest: resolve(__dirname, 'evenements/nicatfest-2026/index.html'),
+        nicatfestFadaProject: resolve(__dirname, 'projets/nicatfest-fada/index.html'),
+        nicatfestFadaEvent: resolve(__dirname, 'evenements/nicatfest-fada/index.html'),
         actualites: resolve(__dirname, 'actualites/index.html'),
         partenariats: resolve(__dirname, 'partenariats/index.html'),
         ressources: resolve(__dirname, 'ressources/index.html'),
