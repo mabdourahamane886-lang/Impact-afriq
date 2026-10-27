@@ -910,3 +910,133 @@ body.home-page .home-hero .btn-primary:hover {
 }
 .card-share-tools button:hover{background:#25272b!important;color:#fff!important}
 .card-share-status{font-size:.78rem;color:#425466;overflow-wrap:anywhere}
+
+ 
+/* IMPACT AFRIQ — système de boutons unifié, premium et responsive */
+:root{
+  --ia-btn-primary:#0b2034;
+  --ia-btn-primary-hover:#17445f;
+  --ia-btn-accent:#d9ae50;
+  --ia-btn-accent-hover:#f0d486;
+  --ia-btn-text:#ffffff;
+  --ia-btn-border:#d4dde4;
+  --ia-btn-radius:12px;
+  --ia-btn-height:50px;
+  --ia-btn-transition:180ms ease;
+}
+.btn,
+button:not(.menu-toggle):not(.filter-chip):not(.unstyled-button),
+input[type="submit"],
+input[type="button"],
+input[type="reset"]{
+  box-sizing:border-box;
+  min-height:var(--ia-btn-height);
+  padding:12px 20px;
+  border:1px solid transparent;
+  border-radius:var(--ia-btn-radius);
+  font:700 .9rem/1.25 'DM Sans',sans-serif;
+  text-align:center;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  cursor:pointer;
+  transition:background-color var(--ia-btn-transition),color var(--ia-btn-transition),border-color var(--ia-btn-transition),box-shadow var(--ia-btn-transition),transform var(--ia-btn-transition);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-primary,
+button.btn-primary,
+input[type="submit"]{
+  background:var(--ia-btn-primary)!important;
+  background-image:none!important;
+  color:var(--ia-btn-text)!important;
+  border-color:var(--ia-btn-primary)!important;
+  box-shadow:0 5px 14px rgba(11,32,52,.16)!important;
+}
+.btn-primary:hover,
+button.btn-primary:hover,
+input[type="submit"]:hover{
+  background:var(--ia-btn-accent)!important;
+  background-image:none!important;
+  color:#10283a!important;
+  border-color:var(--ia-btn-accent)!important;
+  box-shadow:0 7px 18px rgba(142,102,25,.2)!important;
+  transform:translateY(-1px);
+}
+.btn-outline-dark,
+.btn-secondary,
+.btn-outline,
+button.btn-outline-dark,
+input[type="button"],
+input[type="reset"]{
+  background:#fff!important;
+  color:var(--ia-btn-primary)!important;
+  border-color:var(--ia-btn-border)!important;
+  box-shadow:0 2px 7px rgba(11,32,52,.05)!important;
+}
+.btn-outline-dark:hover,
+.btn-secondary:hover,
+.btn-outline:hover,
+button.btn-outline-dark:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover{
+  background:#fff8e8!important;
+  color:var(--ia-btn-primary)!important;
+  border-color:var(--ia-btn-accent)!important;
+  box-shadow:0 5px 12px rgba(11,32,52,.08)!important;
+  transform:translateY(-1px);
+}
+.btn-ghost{
+  background:rgba(11,32,52,.1)!important;
+  color:var(--ia-btn-primary)!important;
+  border-color:rgba(11,32,52,.25)!important;
+}
+.btn-ghost:hover{
+  background:var(--ia-btn-primary)!important;
+  color:#fff!important;
+  border-color:var(--ia-btn-primary)!important;
+}
+.nav-links .nav-cta{
+  min-height:44px;
+  padding:10px 16px;
+}
+button:disabled,
+.btn:disabled,
+input:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none!important;
+  box-shadow:none!important;
+}
+.btn:focus-visible,
+button:not(.menu-toggle):focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+input[type="reset"]:focus-visible{
+  outline:3px solid rgba(217,174,80,.75);
+  outline-offset:3px;
+}
+@media(max-width:600px){
+  .btn,
+  button:not(.menu-toggle):not(.filter-chip):not(.unstyled-button),
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"]{
+    min-height:48px;
+    padding:12px 16px;
+    font-size:.87rem;
+    max-width:100%;
+    white-space:normal;
+  }
+  .nav-links .nav-cta{width:100%;min-height:48px}
+  .hero-actions,.home-hero-actions,.projects-hero-actions,.inner-hero-actions{
+    gap:10px;
+  }
+  .hero-actions .btn,.home-hero-actions .btn,.projects-hero-actions .btn,.inner-hero-actions .btn{
+    max-width:100%;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .btn,button,input[type="submit"],input[type="button"],input[type="reset"]{transition:none}
+}
